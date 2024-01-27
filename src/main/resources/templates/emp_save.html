@@ -18,6 +18,9 @@
                     <div class="card-header text-center">
                         <p class="fs-4">Add Employee</p>
                     </div>
+                    <th:block data-th-if="${session.msg}">
+                        <p class="text-center text-success fs-4">[[${session.msg}]]</p>
+                    </th:block>
                     <div class="card-body">
                         <form method="post" action="/saveEmp">
                             <div class="mb-3">
