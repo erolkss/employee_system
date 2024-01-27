@@ -8,26 +8,32 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
+
     @Override
     public Employee saveEmp(Employee employee) {
-        return null;
+        return employeeRepository.save(employee);
     }
 
     @Override
     public List<Employee> getAllEmp() {
-        return null;
+        return employeeRepository.findAll();
     }
 
     @Override
     public Employee getEmpById(int id) {
-        return null;
+        return employeeRepository.findById(id).get();
     }
 
     @Override
     public boolean deleteEmp(int id) {
+        Employee emp = employeeRepository.findById(id).get();
+        if (emp != null){
+            employeeRepository.delete(emp);
+            return true;
+        }
         return false;
     }
 }
