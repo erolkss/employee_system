@@ -11,7 +11,16 @@ public class Employee {
     private String name;
     private String email;
     private String address;
+    private String gender;
     private String password;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public int getId() {
         return id;
