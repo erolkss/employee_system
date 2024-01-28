@@ -21,6 +21,7 @@
                     <th:block data-th-if="${session.msg}">
                         <p class="text-center text-success fs-4">[[${session.msg}]]</p>
                     </th:block>
+                    <th:block data-th-text="${@employeeServiceImpl.removeSessionMessage()}"></th:block>
                     <div class="card-body">
                         <form method="post" action="/saveEmp">
                             <div class="mb-3">
