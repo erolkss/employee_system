@@ -5,9 +5,12 @@ import br.com.example.employee_system.service.EmployeeService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -15,7 +18,9 @@ public class HomeController {
     private EmployeeService employeeService;
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<Employee> list = employeeService.getAllEmp();
+        model.addAttribute("empList", list);
         return "index";
     }
 
