@@ -30,12 +30,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                            <tr data-th-each="e:${empList}">
+                                <th scope="row">[[${e.id}]]</th>
+                                <td>[[${e.name}]]</td>
+                                <td>[[${e.email}]]</td>
+                                <td>[[${e.address}]]</td>
+                                <td>[[${e.gender}]]</td>
                                 <td>
                                     <a href="#" class="btn btn-sm btn-primary">Edit</a>
                                     <a href="#" class="btn btn-sm btn-danger">Delete</a>
