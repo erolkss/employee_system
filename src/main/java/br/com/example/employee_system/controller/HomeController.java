@@ -45,4 +45,15 @@ public class HomeController {
         }
         return "redirect:/loadEmpSave";
     }
+
+    @PostMapping("/updateEmpDtls")
+    public String updateEmp(@ModelAttribute Employee employee, HttpSession session) {
+        Employee updateEmp = employeeService.saveEmp(employee);
+        if (updateEmp != null) {
+            session.setAttribute("msg", "Update Successfully");
+        } else {
+            session.setAttribute("msg", "Something Wrong on Server");
+        }
+        return "redirect:/";
+    }
 }
