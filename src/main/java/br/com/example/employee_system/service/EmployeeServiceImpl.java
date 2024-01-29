@@ -31,13 +31,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public boolean deleteEmp(int id) {
+    public boolean deleteEmp(Integer id) {
         Employee emp = employeeRepository.findById(id).get();
-        if (emp != null){
+        if (emp != null) {
             employeeRepository.delete(emp);
             return true;
         }
-        return false;
+            return false;
+
     }
 
     public void removeSessionMessage(){
