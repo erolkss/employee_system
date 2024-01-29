@@ -34,8 +34,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-th-each="e:${empList}">
-                                <th scope="row">[[${e.id}]]</th>
+                            <tr data-th-each="e,c:${empList}">
+                                <th scope="row">[[${c.count}]]</th>
                                 <td>[[${e.name}]]</td>
                                 <td>[[${e.email}]]</td>
                                 <td>[[${e.address}]]</td>
