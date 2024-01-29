@@ -6,9 +6,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,8 +27,11 @@ public class HomeController {
         return "emp_save";
     }
 
-    @GetMapping("/EditEmp")
-    public String editEmp() {
+
+    @RequestMapping(value="/editEmp/{id}", method= RequestMethod.GET)
+    public String editEmp(@PathVariable int id, Model model) {
+        Employee employee = employeeService.getEmpById(id);
+        model.addAttribute("emp",employee);
         return "edit_emp";
     }
 
