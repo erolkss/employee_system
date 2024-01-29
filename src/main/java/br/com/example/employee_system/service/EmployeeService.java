@@ -11,5 +11,5 @@ public interface EmployeeService {
 
     public Employee getEmpById(int id);
 
-    public boolean deleteEmp(int id);
+    boolean deleteEmp(Integer id);
 }
