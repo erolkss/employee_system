@@ -29,7 +29,7 @@ public class HomeController {
 
 
     @RequestMapping(value="/editEmp/{id}", method= RequestMethod.GET)
-    public String editEmp(@PathVariable int id, Model model) {
+    public String editEmp(  @PathVariable int id, Model model) {
         Employee employee = employeeService.getEmpById(id);
         model.addAttribute("emp",employee);
         return "edit_emp";
@@ -51,6 +51,17 @@ public class HomeController {
         Employee updateEmp = employeeService.saveEmp(employee);
         if (updateEmp != null) {
             session.setAttribute("msg", "Update Successfully");
+        } else {
+            session.setAttribute("msg", "Something Wrong on Server");
+        }
+        return "redirect:/";
+    }
+
+    @GetMapping("/deleteEmp/{id}")
+    public String deleteEmp(@PathVariable Integer id, HttpSession session) {
+        boolean f = employeeService.deleteEmp(id);
+        if (f) {
+            session.setAttribute("msg", "Delete Successfully");
         } else {
             session.setAttribute("msg", "Something Wrong on Server");
         }
