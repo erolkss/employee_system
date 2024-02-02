@@ -50,6 +50,7 @@ Para Excluir um Funcionário basta na Página Principal clicar no botão: ![Web 
 ## Front end
 - HTML
 - Thymeleaf
+- Bootstrap
 
 
 # Como executar o projeto
