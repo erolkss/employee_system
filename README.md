@@ -6,7 +6,7 @@
 
 O Sistema de Funcionários 
 
-É um sistema simples, onde foi desenvolvido com intuito de aprender sobre a teamplate Engine Thymeleaf que facilita a crição de páginas HTML. Assim criadno teamplates de forma mais fácil (Facilitanto a vida do Back-End).
+É um sistema simples, onde foi desenvolvido com intuito de aprender sobre a teamplate Engine Thymeleaf que facilita a criação de páginas HTML. Assim criando teamplates de forma mais fácil (Facilitanto a vida do Back-End).
 
 O Sistema é um CRUD onde podemos 
    - Listar todos os Funcionários;
